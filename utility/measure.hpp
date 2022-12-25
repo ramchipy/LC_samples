@@ -12,5 +12,5 @@ void perform_print_duration(std::string_view explanation, func&& callable, Args&
 
     auto end = chrn::steady_clock::now();
     std::cout<<explanation<<result<<"\n";
-    std::cout << "Elapsed time in seconds: "<< (boost::format("%.4f") % chrn::duration<float>(end - start).count()).str() << " sec\n";    
+    std::cout << "Elapsed time in seconds: "<< (boost::format("%.6f") % chrn::duration<float>(end - start).count()).str() << " sec\n";    
 }

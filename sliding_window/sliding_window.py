@@ -21,11 +21,11 @@ def find_max_sum_of_K_sliding_window(arr, K):
 
 random.seed(1234)
 arr = random.sample(range(0, 100000), 99999)
-K = 999
+window_size = 999
 start = datetime.now()
-max_br = find_max_sum_of_K_brute_force(arr, K)
+max_br = find_max_sum_of_K_brute_force(arr, window_size)
 print("max_br: {} ({})".format(max_br, (datetime.now()-start).total_seconds()))
 
 start = datetime.now()
-max_sw = find_max_sum_of_K_sliding_window(arr, K)
+max_sw = find_max_sum_of_K_sliding_window(arr, window_size)
 print("max_sw: {} ({})".format(max_sw, (datetime.now()-start).total_seconds()))
