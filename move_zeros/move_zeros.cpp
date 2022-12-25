@@ -52,6 +52,7 @@ void move_zeros_efficient(std::vector<int>& vec)
             j++;
         }                
     }
+    
     for(int i=j; i<vec.size(); i++)
     {
         vec[i] = 0;

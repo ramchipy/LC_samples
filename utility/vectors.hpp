@@ -25,3 +25,20 @@ static void print_vector(const std::vector<int>& vec)
     }
     std::cout<<"\n";
 }
+
+template<typename IT>
+static void print_vector(IT first, IT last)
+{
+    int i = 0;
+    std::cout<<'[';
+    for(auto it = first; it<last; it++)
+    {
+        std::cout<<*it<<" ";
+        i++;
+        if((i % 16) == 15)
+        {
+            std::cout<<"\n";
+        }
+    }
+    std::cout<<"]\n";
+}
