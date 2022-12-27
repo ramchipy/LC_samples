@@ -3,7 +3,7 @@
 #include <boost/format.hpp>
 
 template<typename func, typename ...Args>
-void perform_print_duration(std::string_view explanation, func&& callable, Args&& ...args)
+decltype(auto) perform_print_duration(std::string_view explanation, func&& callable, Args&& ...args)
 {
     namespace chrn = std::chrono;
     auto start = std::chrono::steady_clock::now();
@@ -11,8 +11,8 @@ void perform_print_duration(std::string_view explanation, func&& callable, Args&
     auto result = std::invoke(std::forward<func>(callable), std::forward<Args>(args)...);
 
     auto end = chrn::steady_clock::now();
-    std::cout<<explanation<<result<<"\n";
     std::cout << "Elapsed time in seconds: "<< (boost::format("%.6f") % chrn::duration<float>(end - start).count()).str() << " sec\n";    
+    return result;
 }
 
 template<typename func, typename ...Args>

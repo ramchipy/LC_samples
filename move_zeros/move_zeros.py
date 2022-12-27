@@ -25,12 +25,12 @@ def move_zeros_brute_force(arr):
             next_zero -= 1
 
 def move_zeros_efficient(arr):
-    j = 0    
+    non_zero_ndx = 0    
     for i in range(len(arr)):
         if arr[i] != 0:
-            arr[j] = arr[i]
-            j += 1
-    for k in range(j, len(arr)):
+            arr[non_zero_ndx] = arr[i]
+            non_zero_ndx += 1
+    for k in range(non_zero_ndx, len(arr)):
         arr[k] = 0
         
 
