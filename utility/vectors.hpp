@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
 
+template <typename T=int>
 static auto get_vector(size_t size = 9999, int modulo = 1000)
 {    
-    std::vector<int> vec(size);
+    std::vector<T> vec(size);
     srand(12314);
     for(auto& e : vec)
     {
@@ -13,7 +14,8 @@ static auto get_vector(size_t size = 9999, int modulo = 1000)
     return vec;
 }
 
-static void print_vector(const std::vector<int>& vec)
+template <typename T>
+static void print_vector(const std::vector<T>& vec)
 {
     for(int i=0; i<vec.size(); i++)
     {
