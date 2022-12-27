@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <string_view>
 
 template <typename T=int>
 static auto get_vector(size_t size = 9999, int modulo = 1000)
@@ -43,4 +45,18 @@ static void print_vector(IT first, IT last)
         }
     }
     std::cout<<"]\n";
+}
+
+template<typename T>
+std::string join(std::vector<T>& vec, std::string_view delim)
+{
+    std::stringstream ss;
+    for(int i=0; i<vec.size()-1; i++)
+    {
+        ss<<vec[i];        
+        ss << delim;
+    }
+    ss<<vec[vec.size()-1];
+
+    return ss.str();
 }
