@@ -11,7 +11,7 @@ decltype(auto) perform_print_duration(std::string_view explanation, func&& calla
     auto result = std::invoke(std::forward<func>(callable), std::forward<Args>(args)...);
 
     auto end = chrn::steady_clock::now();
-    std::cout << "Elapsed time in seconds: "<< (boost::format("%.6f") % chrn::duration<float>(end - start).count()).str() << " sec\n";    
+    std::cout <<explanation<< "Elapsed time in seconds: "<< (boost::format("%.6f") % chrn::duration<float>(end - start).count()).str() << " sec\n";    
     return result;
 }
 
