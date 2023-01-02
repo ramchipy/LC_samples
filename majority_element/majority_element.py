@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-def majority_element(arr):
+def majority_element_map(arr):
     num_dict = defaultdict(int)
     for e in arr:
         num_dict[e] += 1
@@ -22,5 +22,5 @@ def majority_element_optimal(arr):
             
 
 for arr in [[3,1,3], [2,2,1,1,1,2,2]]:
-    print("{} is the majority element in {}".format(majority_element(arr), arr))
+    print("{} is the majority element in {}".format(majority_element_map(arr), arr))
     print("{} is the majority element in {}".format(majority_element_optimal(arr), arr))    
