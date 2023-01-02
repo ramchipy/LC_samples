@@ -24,7 +24,7 @@ bool contains_duplicate_brute_force(std::span<int> v)
 }
 
 bool contains_duplicate_sort(std::span<int> v)
-{
+{    
     std::sort(begin(v), end(v));
     for(int i=0; i<v.size()-1; i++)
     {
